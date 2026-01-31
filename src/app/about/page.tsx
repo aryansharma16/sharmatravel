@@ -5,7 +5,22 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Sharma Himalayan Cabs is run by Pankaj Sharma. Experienced taxi and tour services in Himachal Pradesh — Dalhousie, Dharamshala, Manali, and North India.',
-  keywords: ['Sharma Himalayan Cabs', 'Pankaj Sharma', 'Himachal taxi', 'about us'],
+  keywords: [
+    'Sharma Himalayan Cabs',
+    'Pankaj Sharma',
+    'about Sharma Himalayan Cabs',
+    'Himachal taxi',
+    'Himachal cab',
+    'Dalhousie taxi',
+    'Dharamshala cab',
+    'Manali taxi',
+    'taxi company Himachal',
+    'tour operator Himachal',
+    'North India taxi',
+    'reliable taxi service',
+    'local drivers Himachal',
+    'about us',
+  ],
 };
 
 export default function AboutPage() {

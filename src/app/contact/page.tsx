@@ -5,7 +5,22 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Contact Sharma Himalayan Cabs for taxi and tour bookings. Call, WhatsApp, or send an enquiry. Dalhousie, Dharamshala, Manali taxi services.',
-  keywords: ['contact Sharma Himalayan Cabs', 'Himachal taxi booking', 'cab enquiry'],
+  keywords: [
+    'contact Sharma Himalayan Cabs',
+    'Sharma Himalayan Cabs contact',
+    'Himachal taxi booking',
+    'cab enquiry',
+    'taxi enquiry',
+    'book cab Himachal',
+    'book taxi Dalhousie',
+    'book taxi Dharamshala',
+    'book taxi Manali',
+    'cab booking contact',
+    'WhatsApp taxi booking',
+    'call for cab',
+    'taxi quote Himachal',
+    'tour enquiry',
+  ],
 };
 
 export default function ContactPage() {

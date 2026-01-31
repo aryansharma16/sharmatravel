@@ -4,42 +4,45 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Button } from '@/components/ui/Button';
+import { CustomMultiSelectDropdown } from '@/components/ui/CustomMultiSelectDropdown';
 
 const PHONE_PLACEHOLDER = '+91XXXXXXXXXX';
 const WHATSAPP_PLACEHOLDER = '+91XXXXXXXXXX';
 
-const TIME_SLOTS = [
-  { value: '06:00', label: '6:00 AM' },
-  { value: '07:00', label: '7:00 AM' },
-  { value: '08:00', label: '8:00 AM' },
-  { value: '09:00', label: '9:00 AM' },
-  { value: '10:00', label: '10:00 AM' },
-  { value: '11:00', label: '11:00 AM' },
-  { value: '12:00', label: '12:00 PM' },
-  { value: '13:00', label: '1:00 PM' },
-  { value: '14:00', label: '2:00 PM' },
-  { value: '15:00', label: '3:00 PM' },
-  { value: '16:00', label: '4:00 PM' },
-  { value: '17:00', label: '5:00 PM' },
-  { value: '18:00', label: '6:00 PM' },
-  { value: '19:00', label: '7:00 PM' },
-  { value: '20:00', label: '8:00 PM' },
+const SERVICE_TYPES = [
+  { value: 'pic-drop', label: 'Pic drop only' },
+  { value: 'package', label: 'Package' },
+  { value: 'destination', label: 'Destination' },
+  { value: 'sightseeing', label: 'Sightseeing' },
 ];
 
-const CAR_TYPES = [
-  { value: 'sedan', label: 'Sedan' },
-  { value: 'suv', label: 'SUV' },
-  { value: 'innova', label: 'Innova' },
-  { value: 'tempo-traveller', label: 'Tempo Traveller' },
-  { value: 'other', label: 'Other' },
+const CARS: { value: string; label: string }[] = [
+  { value: 'brezza', label: 'Brezza' },
+  { value: 'honda-amaze', label: 'Honda Amaze' },
+  { value: 'swift-desire', label: 'Swift Desire' },
+  { value: 'innova-crysta', label: 'Innova Crysta' },
+  { value: 'innova-hycross', label: 'Innova Hycross' },
+  { value: 'jimny', label: 'Jimny' },
+  { value: 'kia-carens', label: 'Kia Carens' },
+  { value: 'ertiga', label: 'Ertiga' },
+  { value: 'force-armania', label: 'Force Armania' },
+  { value: 'hyundai-aura', label: 'Hyundai Aura' },
+  { value: 'tempo-traveller-scorpio-n', label: 'Tempo Traveller Scorpio N' },
+  { value: 'alto', label: 'Alto' },
+  { value: 'etios', label: 'Etios' },
+  { value: 'baleno', label: 'Baleno' },
+  { value: 'glanza', label: 'Glanza' },
+  { value: 'swift-dzire-new', label: 'Swift Dzire New' },
 ];
 
 export function RequestCabSection() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [selectedCars, setSelectedCars] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (selectedCars.length === 0) return;
     setLoading(true);
     // Simulate API call – replace with actual endpoint later
     await new Promise((r) => setTimeout(r, 800));
@@ -108,16 +111,39 @@ export function RequestCabSection() {
               placeholder="e.g. Delhi to Manali"
               className="sm:col-span-2"
             />
-            <Input label="Date" id="date" name="date" type="date" required />
-            <Select label="Time Slot" id="time_slot" name="time_slot" options={TIME_SLOTS} required />
+            <div className="sm:col-span-2">
+              <Input label="Date" id="date" name="date" type="date" required />
+            </div>
             <Select
-              label="Car Type"
-              id="car_type"
-              name="car_type"
-              options={CAR_TYPES}
+              label="Service Type"
+              id="service_type"
+              name="service_type"
+              options={SERVICE_TYPES}
               required
-              className="sm:col-span-2"
             />
+            <div>
+              <CustomMultiSelectDropdown
+                label="Car Type"
+                name="car_type"
+                options={CARS}
+                value={selectedCars}
+                onChange={setSelectedCars}
+                required
+                placeholder="Search and select cars..."
+              />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="query" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                Query / Message
+              </label>
+              <textarea
+                id="query"
+                name="query"
+                rows={4}
+                placeholder="Any special requests, pickup time, or details..."
+                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder-slate-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-400 dark:focus:border-primary-400 dark:focus:ring-primary-400"
+              />
+            </div>
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Button type="submit" variant="primary" disabled={loading}>
@@ -132,7 +158,7 @@ export function RequestCabSection() {
             </Button>
             <a
               href={`tel:${PHONE_PLACEHOLDER.replace(/\D/g, '')}`}
-              className="text-sm text-primary-600 hover:underline dark:text-primary-400"
+              className="text-sm font-medium text-red-600 hover:underline hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
             >
               Call us directly
             </a>

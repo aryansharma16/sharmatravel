@@ -4,6 +4,16 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Privacy policy for Sharma Himalayan Cabs. How we collect, use, and protect your information when you use our taxi and tour services.',
+  keywords: [
+    'Sharma Himalayan Cabs privacy',
+    'privacy policy',
+    'taxi booking privacy',
+    'cab booking data',
+    'Pankaj Sharma',
+    'Himachal taxi privacy',
+    'data protection',
+    'personal information taxi',
+  ],
 };
 
 export default function PrivacyPolicyPage() {
