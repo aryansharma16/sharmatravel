@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 
-const PHONE_PLACEHOLDER = '+91 9317670639';
-const PHONE_PLACEHOLDER2 = '+91 8278709365';
-const WHATSAPP_PLACEHOLDER = '+91 9317670639';
+const PHONE_PLACEHOLDER = '9317670639';
+const PHONE_PLACEHOLDER2 = '8278709365';
+const WHATSAPP_PLACEHOLDER = '9317670639';
 
 const PHONE_REGEX = /^[6-9]\d{9}$/;
 
