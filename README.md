@@ -6,10 +6,22 @@ Production-ready Next.js (App Router) frontend for taxi & tour services in Himac
 
 ```bash
 npm install
+cp .env.example .env
+npm run db:push
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+## Database & API
+
+- **Stack:** Prisma + SQLite (file: `prisma/dev.db`).
+- **Schema:** `prisma/schema.prisma` — `CabRequest` (Request a Cab), `ContactEnquiry` (Contact form).
+- **APIs:**
+  - `POST /api/request-cab` — name, phone (required), route, date, serviceType, carTypes, query. Validates and saves to DB.
+  - `POST /api/contact` — name, phone (required), message (required), email (optional). Validates and saves to DB.
+- **Env:** `DATABASE_URL` in `.env` (see `.env.example`).
+- **Commands:** `npm run db:push` (create/migrate DB), `npm run db:studio` (Prisma Studio).
 
 ## Build
 
@@ -34,4 +46,4 @@ npm start
 
 ## Stack
 
-- Next.js 14 (App Router), TypeScript, Tailwind CSS, dark/light theme.
+- Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma + SQLite, dark/light theme.

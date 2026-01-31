@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model CabRequest {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  route       String?
+  date        String?
+  serviceType String?
+  carTypes    String   // JSON array e.g. ["innova-crysta","brezza"]
+  query       String?
+  createdAt   DateTime @default(now())
+}
+
+model ContactEnquiry {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  message   String
+  createdAt DateTime @default(now())
+}

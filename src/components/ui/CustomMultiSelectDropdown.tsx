@@ -13,6 +13,7 @@ type CustomMultiSelectDropdownProps = {
   required?: boolean;
   placeholder?: string;
   className?: string;
+  error?: string;
 };
 
 export function CustomMultiSelectDropdown({
@@ -24,6 +25,7 @@ export function CustomMultiSelectDropdown({
   required = false,
   placeholder = 'Search and select...',
   className = '',
+  error,
 }: CustomMultiSelectDropdownProps) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -69,7 +71,11 @@ export function CustomMultiSelectDropdown({
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className="flex h-11 min-h-11 w-full items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-left text-slate-900 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-primary-400 dark:focus:ring-primary-400"
+          className={`flex h-11 min-h-11 w-full items-center gap-2 rounded-lg border bg-white px-3 py-2 text-left text-slate-900 focus:outline-none focus:ring-1 dark:bg-slate-800 dark:text-slate-100 ${
+            error
+              ? 'border-red-500 focus:border-red-500 focus:ring-red-500 dark:border-red-500 dark:focus:border-red-500 dark:focus:ring-red-500'
+              : 'border-slate-300 focus:border-primary-500 focus:ring-primary-500 dark:border-slate-600 dark:focus:border-primary-400 dark:focus:ring-primary-400'
+          }`}
           aria-haspopup="listbox"
           aria-expanded={open}
           aria-required={required}
@@ -152,6 +158,7 @@ export function CustomMultiSelectDropdown({
           </div>
         )}
       </div>
+      {error && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{error}</p>}
       {/* Hidden inputs for form submit: multi values as car_type[] or repeated name */}
       {value.map((v) => (
         <input key={v} type="hidden" name={name} value={v} readOnly />
