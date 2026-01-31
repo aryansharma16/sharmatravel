@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+  --card: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
