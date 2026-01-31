@@ -13,7 +13,7 @@ export const PACKAGE_IMAGE_KEY: Record<string, string> = {
 export type ItineraryDay = {
   day: string;
   title: string;
-  details: string[];
+  details: readonly string[];
 };
 
 export type TourPackage = {
@@ -22,15 +22,15 @@ export type TourPackage = {
   title: string;
   duration: string;
   priceRange: string;
-  famousFor: string[];
-  bestTimeToVisit: string[];
-  idealFor: string[];
+  famousFor: readonly string[];
+  bestTimeToVisit: readonly string[];
+  idealFor: readonly string[];
   activityLevel: string;
-  locationsCovered: string[];
-  itinerary: ItineraryDay[];
-  whyChooseThisPackage?: string[];
-  travelTips?: string[];
-  importantNotes?: string[];
+  locationsCovered: readonly string[];
+  itinerary: readonly ItineraryDay[];
+  whyChooseThisPackage?: readonly string[];
+  travelTips?: readonly string[];
+  importantNotes?: readonly string[];
 };
 
 export type TourPackageWithKey = TourPackage & { packageKey: string };

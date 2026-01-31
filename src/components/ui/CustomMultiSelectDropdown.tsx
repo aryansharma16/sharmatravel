@@ -78,7 +78,6 @@ export function CustomMultiSelectDropdown({
           }`}
           aria-haspopup="listbox"
           aria-expanded={open}
-          aria-required={required}
         >
           {selectedLabels.length > 0 ? (
             <span className="scrollbar-custom flex min-w-0 flex-1 flex-nowrap items-center gap-1.5 overflow-x-auto overflow-y-hidden py-0.5">
