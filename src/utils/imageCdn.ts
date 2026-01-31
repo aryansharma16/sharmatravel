@@ -157,4 +157,22 @@ export const imageCdn = {
       alt: "Sonmarg Kashmir tour cab",
     },
   ],
+  kasol: [
+    {
+      title: "Kasol Parvati Valley View",
+      src: `${BASE_URL}/v1769883808/kasol_view1_ceabcc.jpg`,
+      alt: "Kasol Parvati Valley scenic view taxi service",
+    },
+    {
+      title: "Kasol Riverside View",
+      src: `${BASE_URL}/v1769883807/kasol_view2_etf1js.webp`,
+      alt: "Kasol riverside view cab and tour service",
+    },
+    {
+      title: "Kasol Trek Route",
+      src: `${BASE_URL}/v1769883807/kasol_trek_niutte.webp`,
+      alt: "Kasol trekking route taxi and travel service",
+    },
+  ],
+
 };

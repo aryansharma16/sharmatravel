@@ -12,6 +12,19 @@ export type Destination = {
   region: string;
 };
 
+/** Control display order: first slug appears first. Add or reorder to change listing. */
+export const DESTINATION_DISPLAY_ORDER: string[] = [
+  'dalhousie-khajjiar',
+  'dharamshala',
+  'kangra',
+  'amritsar',
+  'shimla',
+  'manali',
+  'kasol',
+  'jammu',
+  'kashmir',
+];
+
 export const destinations: Destination[] = [
   {
     slug: 'manali',
@@ -85,6 +98,15 @@ export const destinations: Destination[] = [
     region: 'Jammu & Kashmir',
     highlights: ['Gulmarg', 'Sonmarg', 'Dal Lake', 'Pahalgam', 'Houseboats'],
   },
+  {
+    slug: 'kasol',
+    name: 'Kasol',
+    shortDescription: 'Parvati Valley hub for treks, riverside cafés, and backpacker vibes. Gateway to Kheerganga, Tosh, and Malana.',
+    longDescription: 'Kasol, in the Parvati Valley of Himachal Pradesh, is a popular base for trekkers and backpackers. The riverside village offers cafés, guesthouses, and easy access to Kheerganga, Tosh, Malana, and Manikaran. Our taxi services cover Kasol transfers from Bhuntar or Delhi, and trips to nearby villages and trek points.',
+    imageKey: 'kasol',
+    region: 'Himachal Pradesh',
+    highlights: ['Parvati Valley', 'Kheerganga Trek', 'Tosh', 'Malana', 'Manikaran', 'Riverside Cafés'],
+  },
 ];
 
 export function getDestinationBySlug(slug: string): Destination | undefined {
@@ -93,4 +115,17 @@ export function getDestinationBySlug(slug: string): Destination | undefined {
 
 export function getDestinationImages(imageKey: DestinationImageKey) {
   return imageCdn[imageKey] ?? [];
+}
+
+/** Destinations sorted by DESTINATION_DISPLAY_ORDER (then by array index for any missing). */
+export function getDestinationsSorted(): Destination[] {
+  const order = DESTINATION_DISPLAY_ORDER;
+  return [...destinations].sort((a, b) => {
+    const i = order.indexOf(a.slug);
+    const j = order.indexOf(b.slug);
+    if (i === -1 && j === -1) return 0;
+    if (i === -1) return 1;
+    if (j === -1) return -1;
+    return i - j;
+  });
 }

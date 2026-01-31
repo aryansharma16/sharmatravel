@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-const PHONE_PLACEHOLDER = '+91 XXXXX XXXXX';
-const WHATSAPP_PLACEHOLDER = '+91XXXXXXXXXX';
+const PHONE_PLACEHOLDER = '+91 9317670639 ';
+const PHONE_PLACEHOLDER2 = '+91 8278709365';
+const WHATSAPP_PLACEHOLDER = '+91 9317670639';
 
 const quickLinks = [
   { href: '/', label: 'Home' },

@@ -1,8 +1,9 @@
-import { destinations } from '@/utils/destinations';
+import { getDestinationsSorted } from '@/utils/destinations';
 import { imageCdn } from '@/utils/imageCdn';
 import { DestinationCard } from './DestinationCard';
 
 export function PopularRoutesSection() {
+  const destinations = getDestinationsSorted();
   return (
     <section className="py-16" aria-labelledby="popular-routes-heading">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
