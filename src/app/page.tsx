@@ -66,8 +66,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <RequestCabSection />
-      <PopularRoutesSection />
       <TourPackagesSection />
+      <PopularRoutesSection />
       <ReviewsSection />
       <WhyChooseUsSection />
     </>
