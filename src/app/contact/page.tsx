@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -31,6 +32,27 @@ export default function ContactPage() {
       </h1>
       <p className="mt-2 text-slate-600 dark:text-slate-400">
         Call, WhatsApp, or send an enquiry. We&apos;ll respond as soon as possible.
+      </p>
+      <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+        Follow us on{' '}
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-primary-600 hover:underline dark:text-primary-400"
+        >
+          Instagram
+        </a>
+        {' '}and{' '}
+        <a
+          href={YOUTUBE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-primary-600 hover:underline dark:text-primary-400"
+        >
+          YouTube
+        </a>
+        .
       </p>
       <div className="mt-8">
         <ContactForm />

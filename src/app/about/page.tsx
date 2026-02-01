@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { getVehiclesSorted } from '@/utils/vehicles';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -264,13 +265,28 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <div className="mt-12 flex flex-wrap gap-3">
-          <Button href="/contact" variant="primary">
-            Get in Touch
-          </Button>
-          <Button href="/services" variant="outline">
-            Our Services
-          </Button>
+        <div className="mt-12 space-y-4">
+          <div className="flex flex-wrap gap-3">
+            <Button href="/contact" variant="primary">
+              Get in Touch
+            </Button>
+            <Button href="/services" variant="outline">
+              Our Services
+            </Button>
+            <Button href={INSTAGRAM_URL} external variant="outline">
+              Instagram
+            </Button>
+            <Button href={YOUTUBE_URL} external variant="outline">
+              YouTube
+            </Button>
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            Follow us on{' '}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">Instagram</a>
+            {' '}and{' '}
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">YouTube</a>
+            {' '}for travel updates and videos.
+          </p>
         </div>
       </div>
     </div>

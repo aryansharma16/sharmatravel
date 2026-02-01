@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getDestinationBySlug, getDestinationImages, destinations } from '@/utils/destinations';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -111,7 +112,10 @@ export default async function DestinationPage({ params }: Props) {
             Book a cab or tour
           </h2>
           <p className="mt-2 text-slate-600 dark:text-slate-400">
-            Request a taxi for {destination.name} sightseeing, transfers, or multi-day tours.
+            Request a taxi for {destination.name} sightseeing, transfers, or multi-day tours. Follow us on{' '}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">Instagram</a>
+            {' '}and{' '}
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">YouTube</a>.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
@@ -120,6 +124,22 @@ export default async function DestinationPage({ params }: Props) {
             >
               Get a quote
             </Link>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+            >
+              Instagram
+            </a>
+            <a
+              href={YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+            >
+              YouTube
+            </a>
             <Link
               href="/"
               className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"

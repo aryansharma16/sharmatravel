@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 const PHONE_PLACEHOLDER = '9317670639';
 const PHONE_PLACEHOLDER2 = '8278709365';
@@ -107,6 +108,12 @@ export function ContactForm() {
           >
             WhatsApp
           </Button>
+          <Button href={INSTAGRAM_URL} external variant="outline">
+            Instagram
+          </Button>
+          <Button href={YOUTUBE_URL} external variant="outline">
+            YouTube
+          </Button>
         </div>
       </div>
     );
@@ -127,6 +134,12 @@ export function ContactForm() {
           variant="whatsapp"
         >
           WhatsApp
+        </Button>
+        <Button href={INSTAGRAM_URL} external variant="outline">
+          Instagram
+        </Button>
+        <Button href={YOUTUBE_URL} external variant="outline">
+          YouTube
         </Button>
       </div>
 

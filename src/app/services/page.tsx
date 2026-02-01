@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { getVehiclesSorted, getVehicleById } from '@/utils/vehicles';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -241,7 +242,10 @@ export default function ServicesPage() {
             >
               home page
             </Link>
-            .
+            . Follow us on{' '}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">Instagram</a>
+            {' '}and{' '}
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">YouTube</a>.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact" variant="primary">
@@ -249,6 +253,12 @@ export default function ServicesPage() {
             </Button>
             <Button href="/#request-cab" variant="outline">
               Request a Cab
+            </Button>
+            <Button href={INSTAGRAM_URL} external variant="outline">
+              Instagram
+            </Button>
+            <Button href={YOUTUBE_URL} external variant="outline">
+              YouTube
             </Button>
           </div>
         </div>

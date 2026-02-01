@@ -6,6 +6,7 @@ import {
   allTourPackages,
 } from '@/utils/tourPackages';
 import { imageCdn } from '@/utils/imageCdn';
+import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -221,7 +222,10 @@ export default async function TourPackagePage({ params }: Props) {
             Enquire for packages. No online booking — we&apos;ll confirm by call or WhatsApp.
           </p>
           <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
-            This package is fully customizable — duration, itinerary, and inclusions can be adjusted to suit your group and budget. Packages can be combined, or you can create and discuss your own package with us.
+            This package is fully customizable — duration, itinerary, and inclusions can be adjusted to suit your group and budget. Packages can be combined, or you can create and discuss your own package with us. Follow us on{' '}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">Instagram</a>
+            {' '}and{' '}
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">YouTube</a>.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
@@ -230,6 +234,22 @@ export default async function TourPackagePage({ params }: Props) {
             >
               Enquire Now
             </Link>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+            >
+              Instagram
+            </a>
+            <a
+              href={YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+            >
+              YouTube
+            </a>
             <Link
               href="/"
               className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
