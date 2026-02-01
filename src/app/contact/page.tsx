@@ -5,14 +5,14 @@ import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Sharma Himalayan Cabs for taxi and tour bookings. Call, WhatsApp, or send an enquiry. Dalhousie, Dharamshala, Manali taxi services.',
+    'Contact Dalhousie Northern Cabs for taxi and tour bookings. Call, WhatsApp, or send an enquiry. Dalhousie, Dharamshala, Manali taxi services.',
   keywords: [
-    'contact Sharma Himalayan Cabs',
-    'Sharma Himalayan Cabs contact',
+    'contact Dalhousie Northern Cabs',
+    'Dalhousie Northern Cabs contact',
     'Himachal taxi booking',
     'cab enquiry',
     'taxi enquiry',
-    'book cab Himachal',
+    'book cab Dalhousie',
     'book taxi Dalhousie',
     'book taxi Dharamshala',
     'book taxi Manali',
@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     'taxi quote Himachal',
     'tour enquiry',
   ],
+  openGraph: {
+    title: 'Contact | Dalhousie Northern Cabs',
+    description: 'Contact Dalhousie Northern Cabs for taxi and tour bookings. Call, WhatsApp, or send an enquiry.',
+  },
 };
 
 export default function ContactPage() {

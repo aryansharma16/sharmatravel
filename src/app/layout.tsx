@@ -8,14 +8,19 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FixedContactBar } from '@/components/FixedContactBar';
 
+const SITE_NAME = 'Dalhousie Northern Cabs';
+const DEFAULT_DESCRIPTION =
+  'Reliable taxi and tour services in Himachal and North India. Dalhousie taxi, Dharamshala cab, Manali tours. Book or enquire now.';
+
 export const metadata: Metadata = {
   title: {
-    default: 'Sharma Himalayan Cabs | Taxi & Tour Services in Himachal',
-    template: '%s | Sharma Himalayan Cabs',
+    default: `${SITE_NAME} | Taxi & Tour Services in Dalhousie & Himachal`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    'Reliable taxi and tour services in Himachal Pradesh. Dalhousie taxi, Dharamshala cab, Manali tours. Book your cab or enquire about tour packages.',
+  description: DEFAULT_DESCRIPTION,
   keywords: [
+    'Dalhousie Northern Cabs',
+    'Northern cabs Dalhousie',
     'Dalhousie taxi',
     'Dalhousie taxi service',
     'Dalhousie cab',
@@ -38,7 +43,6 @@ export const metadata: Metadata = {
     'Himachal cab',
     'Himachal car rental',
     'Himachal tours',
-    'Himachal travels',
     'North India taxi',
     'North India cab',
     'taxi rental',
@@ -63,13 +67,19 @@ export const metadata: Metadata = {
     'Delhi to Dharamshala',
     'Jammu to Dalhousie',
     'Shimla to Manali',
-    'Sharma Himalayan Cabs',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Taxi & Tour in Dalhousie & Himachal`,
+    description: DEFAULT_DESCRIPTION,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://sharmahimlayancabs.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dalhousienortherncabs.com'),
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

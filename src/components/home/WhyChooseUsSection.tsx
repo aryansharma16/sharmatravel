@@ -64,7 +64,7 @@ export function WhyChooseUsSection() {
           Why Choose Us
         </h2>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
-          What makes Sharma Himalayan Cabs your best choice for Himachal travel.
+          What makes Dalhousie Northern Cabs your best choice for Himachal travel.
         </p>
         <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {points.map((item, i) => (

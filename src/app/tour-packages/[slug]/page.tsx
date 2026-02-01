@@ -18,9 +18,15 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const pkg = getTourPackageBySlug(slug);
   if (!pkg) return { title: 'Package not found' };
+  const title = `${pkg.title} | Tour Package`;
+  const description = `${pkg.duration}. ${pkg.famousFor.slice(0, 2).join(', ')}. Contact Dalhousie Northern Cabs for best prices.`;
   return {
-    title: `${pkg.title} | Tour Package`,
-    description: `${pkg.duration}. ${pkg.famousFor.slice(0, 2).join(', ')}. Contact for best prices.`,
+    title,
+    description,
+    openGraph: {
+      title: `${pkg.title} | Tour Package | Dalhousie Northern Cabs`,
+      description,
+    },
   };
 }
 

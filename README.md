@@ -1,6 +1,6 @@
-# Sharma Himalayan Cabs
+# Dalhousie Northern Cabs
 
-Production-ready Next.js (App Router) frontend for taxi & tour services in Himachal and North India.
+Production-ready Next.js (App Router) frontend for taxi & tour services in Dalhousie, Himachal and North India.
 
 ## Setup
 
@@ -42,7 +42,7 @@ npm start
 
 - Replace phone/WhatsApp placeholders in `Footer`, `HeroSection`, `RequestCabSection`, and `ContactForm` (or add a shared `lib/constants.ts`).
 - Replace Google review URL in `ReviewsSection` with your Google Business Place ID.
-- Set `NEXT_PUBLIC_SITE_URL` for production metadata/OG.
+- Set `NEXT_PUBLIC_SITE_URL` for production metadata/OG (e.g. `https://dalhousienortherncabs.com`).
 
 ## Stack
 

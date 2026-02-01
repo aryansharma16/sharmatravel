@@ -1,5 +1,5 @@
 /**
- * Fleet / vehicles data for Sharma Himalayan Cabs.
+ * Fleet / vehicles data for Dalhousie Northern Cabs.
  * Used on Services and About pages.
  */
 

@@ -11,7 +11,7 @@ const GOOGLE_REVIEW_DIRECT_URL =
     : null;
 
 // Fallback: search Google for the business so users can find and leave a review
-const GOOGLE_REVIEW_SEARCH_QUERY = 'Sharma tour and travels Dalhousie';
+const GOOGLE_REVIEW_SEARCH_QUERY = 'Dalhousie Northern Cabs';
 const GOOGLE_REVIEW_SEARCH_URL = `https://www.google.com/search?q=${encodeURIComponent(GOOGLE_REVIEW_SEARCH_QUERY)}`;
 
 const AVATAR_COLORS = [

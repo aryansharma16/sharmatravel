@@ -55,10 +55,10 @@ export function HeroSection() {
       <div className="relative z-10 flex min-h-[85vh] flex-col justify-center px-4 py-20 text-white sm:min-h-[90vh] sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            Reliable Taxi & Tour Services in Himachal
+            Dalhousie Northern Cabs
           </h1>
           <p className="mt-4 text-lg text-white/90 sm:text-xl">
-            Dalhousie, Dharamshala, Manali & beyond. Experienced drivers, clean cars, on-time pickups.
+            Reliable taxi & tour services in Dalhousie, Dharamshala, Manali & beyond. Experienced drivers, clean cars, on-time pickups.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Button

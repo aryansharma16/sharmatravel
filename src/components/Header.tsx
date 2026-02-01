@@ -6,10 +6,42 @@ import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  {
+    href: '/',
+    label: 'Home',
+    icon: (
+      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+    ),
+  },
+  {
+    href: '/services',
+    label: 'Services',
+    icon: (
+      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1h-1m4-1V8a1 1 0 011-1h2a1 1 0 011 1v8a1 1 0 01-1 1h-1m-4-1a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2" />
+      </svg>
+    ),
+  },
+  {
+    href: '/about',
+    label: 'About',
+    icon: (
+      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    href: '/contact',
+    label: 'Contact',
+    icon: (
+      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
 ];
 
 export function Header() {
@@ -23,22 +55,23 @@ export function Header() {
         <Link
           href="/"
           className="text-lg font-semibold text-slate-900 dark:text-white"
-          aria-label="Sharma Himalayan Cabs - Home"
+          aria-label="Dalhousie Northern Cabs - Home"
         >
-          Sharma Himalayan Cabs
+          Dalhousie Northern Cabs
         </Link>
 
-        <nav className="hidden md:flex md:items-center md:gap-8">
-          {navLinks.map(({ href, label }) => (
+        <nav className="hidden md:flex md:items-center md:gap-6">
+          {navLinks.map(({ href, label, icon }) => (
             <Link
               key={href}
               href={href}
-              className={`text-sm font-medium transition-colors ${
+              className={`inline-flex items-center gap-2 text-sm font-medium transition-colors ${
                 pathname === href
                   ? 'text-primary-600 dark:text-primary-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
               }`}
             >
+              {icon}
               {label}
             </Link>
           ))}
@@ -87,17 +120,18 @@ export function Header() {
       {mobileOpen && (
         <div className="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 md:hidden">
           <nav className="flex flex-col gap-0 px-4 py-3">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, icon }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium ${
+                className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium ${
                   pathname === href
                     ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
                     : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
                 }`}
               >
+                {icon}
                 {label}
               </Link>
             ))}

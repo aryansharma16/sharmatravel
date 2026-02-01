@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy policy for Sharma Himalayan Cabs. How we collect, use, and protect your information when you use our taxi and tour services.',
+    'Privacy policy for Dalhousie Northern Cabs. How we collect, use, and protect your information when you use our taxi and tour services.',
   keywords: [
-    'Sharma Himalayan Cabs privacy',
+    'Dalhousie Northern Cabs privacy',
     'privacy policy',
     'taxi booking privacy',
     'cab booking data',
@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     'data protection',
     'personal information taxi',
   ],
+  openGraph: {
+    title: 'Privacy Policy | Dalhousie Northern Cabs',
+    description: 'Privacy policy for Dalhousie Northern Cabs. How we collect, use, and protect your information.',
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -32,7 +36,7 @@ export default function PrivacyPolicyPage() {
             Introduction
           </h2>
           <p className="mt-2 text-slate-600 dark:text-slate-400">
-            Sharma Himalayan Cabs (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is operated by <strong>Pankaj Sharma</strong>. This Privacy Policy explains how we collect, use, and protect your information when you use our website or contact us for taxi and tour services.
+            Dalhousie Northern Cabs (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is operated by <strong>Pankaj Sharma</strong>. This Privacy Policy explains how we collect, use, and protect your information when you use our website or contact us for taxi and tour services.
           </p>
         </section>
 
@@ -106,7 +110,7 @@ export default function PrivacyPolicyPage() {
             Contact
           </h2>
           <p className="mt-2 text-slate-600 dark:text-slate-400">
-            For privacy-related queries, contact Sharma Himalayan Cabs, owner Pankaj Sharma, via the <a href="/contact" className="text-primary-600 hover:underline dark:text-primary-400">Contact</a> page.
+            For privacy-related queries, contact Dalhousie Northern Cabs, owner Pankaj Sharma, via the <a href="/contact" className="text-primary-600 hover:underline dark:text-primary-400">Contact</a> page.
           </p>
         </section>
       </div>

@@ -13,9 +13,15 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const destination = getDestinationBySlug(slug);
   if (!destination) return { title: 'Destination not found' };
+  const title = `${destination.name} | Taxi & Tour`;
+  const description = destination.shortDescription;
   return {
-    title: `${destination.name} | Taxi & Tour`,
-    description: destination.shortDescription,
+    title,
+    description,
+    openGraph: {
+      title: `${destination.name} | Taxi & Tour | Dalhousie Northern Cabs`,
+      description,
+    },
   };
 }
 

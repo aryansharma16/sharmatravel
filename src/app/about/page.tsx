@@ -8,17 +8,17 @@ import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Sharma Himalayan Cabs is run by Pankaj Sharma. Experienced taxi and tour services in Himachal Pradesh — Dalhousie, Dharamshala, Manali, and North India.',
+    'Dalhousie Northern Cabs is run by Pankaj Sharma from Dalhousie. Experienced taxi and tour services in Himachal Pradesh — Dalhousie, Dharamshala, Manali, and North India.',
   keywords: [
-    'Sharma Himalayan Cabs',
+    'Dalhousie Northern Cabs',
+    'about Dalhousie Northern Cabs',
     'Pankaj Sharma',
-    'about Sharma Himalayan Cabs',
+    'Dalhousie taxi',
     'Himachal taxi',
     'Himachal cab',
-    'Dalhousie taxi',
     'Dharamshala cab',
     'Manali taxi',
-    'taxi company Himachal',
+    'taxi company Dalhousie',
     'tour operator Himachal',
     'North India taxi',
     'reliable taxi service',
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     'hotel assistance Himachal',
     'about us',
   ],
+  openGraph: {
+    title: 'About Us | Dalhousie Northern Cabs',
+    description:
+      'Dalhousie Northern Cabs — run by Pankaj Sharma from Dalhousie. Taxi and tour services in Himachal and North India.',
+  },
 };
 
 const values = [
@@ -46,7 +51,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-slate-800 to-primary-800 px-4 py-14 text-white sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            About Sharma Himalayan Cabs
+            About Dalhousie Northern Cabs
           </h1>
           <p className="mt-4 text-slate-200">
             Reliable taxi and tour services across Himachal Pradesh and North

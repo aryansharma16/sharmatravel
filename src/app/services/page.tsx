@@ -8,13 +8,14 @@ import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Taxi hire, outstation cabs, and tour packages in Himachal. Dalhousie taxi, Dharamshala cab, Manali tours. One-way, round-trip, and multi-day packages.',
+    'Dalhousie Northern Cabs — taxi hire, outstation cabs, and tour packages. Dalhousie taxi, Dharamshala cab, Manali tours. One-way, round-trip, and multi-day packages.',
   keywords: [
+    'Dalhousie Northern Cabs',
+    'Dalhousie taxi',
+    'Dalhousie cab',
     'Himachal taxi',
     'Himachal taxi service',
     'Himachal cab',
-    'Dalhousie taxi',
-    'Dalhousie cab',
     'Dharamshala taxi',
     'Dharamshala cab',
     'Manali taxi',
@@ -31,20 +32,20 @@ export const metadata: Metadata = {
     'round trip cab',
     'local taxi',
     'city rides',
-    'sightseeing tour',
     'sightseeing tour Himachal',
-    'tour packages',
     'tour packages Himachal',
     'multi-day tour',
-    'rides',
-    'travels Himachal',
     'airport transfer',
     'station pickup',
     'Innova taxi',
     'SUV cab',
     'tempo traveller',
-    'Sharma Himalayan Cabs services',
   ],
+  openGraph: {
+    title: 'Services | Dalhousie Northern Cabs',
+    description:
+      'Taxi hire, outstation cabs, and tour packages from Dalhousie. Dalhousie taxi, Dharamshala cab, Manali tours.',
+  },
 };
 
 const services = [
