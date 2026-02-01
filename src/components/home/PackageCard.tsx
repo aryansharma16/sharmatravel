@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import type { TourPackageWithKey } from '@/utils/tourPackages';
@@ -9,8 +12,25 @@ type PackageCardProps = {
 };
 
 export function PackageCard({ package: pkg, imageSrc, imageAlt }: PackageCardProps) {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    router.push(`/tour-packages/${pkg.slug}`);
+  };
+
   return (
-    <article className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-slate-800">
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={handleCardClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleCardClick();
+        }
+      }}
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+    >
       <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-slate-200 dark:bg-slate-700">
         {imageSrc ? (
           /* eslint-disable-next-line @next/next/no-img-element */
@@ -30,22 +50,19 @@ export function PackageCard({ package: pkg, imageSrc, imageAlt }: PackageCardPro
         </div>
       </div>
       <div className="flex flex-1 flex-col p-3 sm:p-4">
-        <h3 className="line-clamp-2 text-base font-semibold leading-tight text-slate-900 dark:text-white sm:text-lg">
+        <h3 className="line-clamp-2 text-base font-semibold leading-tight text-slate-900 dark:text-white sm:text-lg group-hover:line-clamp-none">
           {pkg.title}
         </h3>
         <p className="mt-1.5 text-sm font-medium text-sky-600 dark:text-sky-400">
           For best prices contact us
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap gap-2" onClick={(e) => e.stopPropagation()}>
           <Button href="/contact" variant="outline" className="text-xs sm:text-sm">
             Enquire Now
           </Button>
-          <Link
-            href={`/tour-packages/${pkg.slug}`}
-            className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700 sm:text-sm"
-          >
+          <span className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700 sm:text-sm">
             Show Details
-          </Link>
+          </span>
         </div>
       </div>
     </article>
