@@ -72,7 +72,7 @@ export function HeroSection() {
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2 xs:mt-6 sm:gap-2.5">
             <Button
-              href="/tour-packages"
+              href='#request-cab'
               variant="primary"
               className="gap-1.5 px-3 py-1.5 text-xs font-medium xs:text-sm sm:px-3.5 sm:py-2 sm:text-sm bg-amber-500 text-white hover:bg-amber-600 dark:bg-amber-500 dark:hover:bg-amber-600"
             >
