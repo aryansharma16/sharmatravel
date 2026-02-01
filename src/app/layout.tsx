@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   description: DEFAULT_DESCRIPTION,
   keywords: [
     'Dalhousie Northern Cabs',
+    'DNC',
+    'DNC taxi',
+    'DNC cab',
+    'Northern Cabs',
+    'Northern Cabs Dalhousie',
     'Northern cabs Dalhousie',
+    'Dalhousie Northern Cabs taxi',
+    'Dalhousie Northern Cabs tour',
     'Dalhousie taxi',
     'Dalhousie taxi service',
     'Dalhousie cab',
@@ -87,7 +94,22 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Taxi & Tour in Dalhousie & Himachal`,
     description: DEFAULT_DESCRIPTION,
-    images: [{ url: LOGO_URL, width: 512, height: 512, alt: SITE_NAME }],
+    url: '/',
+    images: [
+      {
+        url: LOGO_URL,
+        width: 512,
+        height: 512,
+        alt: SITE_NAME,
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} | Taxi & Tour in Dalhousie & Himachal`,
+    description: DEFAULT_DESCRIPTION,
+    images: [LOGO_URL],
   },
   manifest: '/site.webmanifest',
 };

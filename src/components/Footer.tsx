@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
 import { LOGO_URL, SITE_NAME } from '@/lib/brand';
+import { allTourPackages } from '@/utils/tourPackages';
+import { getDestinationsSorted } from '@/utils/destinations';
 
 const PHONE_PLACEHOLDER = '+91 9317670639 ';
 const PHONE_PLACEHOLDER2 = '+91 8278709365';
@@ -136,36 +138,76 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Small map — Dalhousie */}
+        {/* Popular routes (packages + destinations) + map */}
         <div className="mt-8 border-t border-slate-200 pt-8 dark:border-slate-800">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
-            Our location
-          </h3>
-          <div className="mt-3 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700">
-            <a
-              href="https://www.google.com/maps/search/Dalhousie,+Himachal+Pradesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-              aria-label="View Dalhousie on Google Maps"
-            >
-              <div className="relative h-32 w-full bg-slate-200 dark:bg-slate-700 sm:h-28 sm:max-w-xs">
-                <iframe
-                  title="Dalhousie, Himachal Pradesh"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27261.5!2d75.9462!3d32.532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDalhousie%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 h-full w-full"
-                />
+          <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                  Popular Tour Packages
+                </h3>
+                <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                  {allTourPackages.map((pkg) => (
+                    <li key={pkg.slug}>
+                      <Link
+                        href={`/tour-packages/${pkg.slug}`}
+                        className="hover:text-primary-600 dark:hover:text-primary-400"
+                      >
+                        {pkg.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
-                Dalhousie, Himachal Pradesh — Click to open in Google Maps
-              </p>
-            </a>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                  Popular Destinations
+                </h3>
+                <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-600 dark:text-slate-400">
+                  {getDestinationsSorted().map((d) => (
+                    <li key={d.slug}>
+                      <Link
+                        href={`/destinations/${d.slug}`}
+                        className="hover:text-primary-600 dark:hover:text-primary-400"
+                      >
+                        {d.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                Our location
+              </h3>
+              <div className="mt-3 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700">
+                <a
+                  href="https://www.google.com/maps/search/Dalhousie,+Himachal+Pradesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                  aria-label="View Dalhousie on Google Maps"
+                >
+                  <div className="relative h-32 w-full bg-slate-200 dark:bg-slate-700 sm:h-28 lg:h-32">
+                    <iframe
+                      title="Dalhousie, Himachal Pradesh"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27261.5!2d75.9462!3d32.532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDalhousie%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 h-full w-full"
+                    />
+                  </div>
+                  <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                    Dalhousie, Himachal Pradesh — Click to open in Google Maps
+                  </p>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
