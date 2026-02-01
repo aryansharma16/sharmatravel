@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dalhousienortherncabs.com
+
+# Sitemaps
+Sitemap: https://dalhousienortherncabs.com/sitemap.xml
