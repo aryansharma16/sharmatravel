@@ -3,24 +3,19 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+import { imageCdn } from '@/utils/imageCdn';
 
 const PHONE_PLACEHOLDER = '9317670639';
 const WHATSAPP_PLACEHOLDER = '9317670639';
 
+// Hero slides from our places / imageCdn utils
 const slides = [
-  {
-    src: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=80',
-    alt: 'Scenic mountain road in the Himalayas',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80',
-    alt: 'Car on highway through hills',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    alt: 'Snow-capped Himalayan peaks',
-  },
-];
+  imageCdn.dalhousieKhajjiar[0],           // Khajjiar
+  imageCdn.manali[5],                      // Solang Valley
+  imageCdn.kashmir[0],                     // Gulmarg Meadows
+  imageCdn.shimla[2],                      // Shimla Ridge
+  imageCdn.dalhousieKhajjiar[1],          // Kalatop
+].map(({ src, alt }) => ({ src, alt }));
 
 export function HeroSection() {
   const [current, setCurrent] = useState(0);
