@@ -9,7 +9,7 @@ import { Footer } from '@/components/Footer';
 import { FixedContactBar } from '@/components/FixedContactBar';
 import { SITE_NAME, LOGO_URL } from '@/lib/brand';
 const DEFAULT_DESCRIPTION =
-  'Reliable taxi and tour services in Himachal and North India. Dalhousie taxi, Dharamshala cab, Manali tours. Book or enquire now.';
+  'Taxi and tour services in the Indian Himalayas — Himachal Pradesh and North India. We operate in the Himalayan region: Dalhousie, Dharamshala, Manali, Shimla, Kashmir. Reliable cabs, sightseeing and tour packages. Book or enquire now.';
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     'Khajjiar tour',
     'Kalatop',
     'Dainkund tour',
+    'Himalayan taxi',
+    'Himalayan cab',
+    'taxi Himalayan region',
     'Himachal taxi',
     'Himachal taxi service',
     'Himachal cab',
@@ -75,6 +78,7 @@ export const metadata: Metadata = {
     'Shimla to Manali',
   ],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dalhousienortherncabs.com'),
+  alternates: { canonical: '/' },
   robots: {
     index: true,
     follow: true,
@@ -114,6 +118,64 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dalhousienortherncabs.com';
+
+function OrganizationJsonLd() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: LOGO_URL,
+    image: LOGO_URL,
+    description: DEFAULT_DESCRIPTION,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Dalhousie',
+      addressRegion: 'Himachal Pradesh',
+      addressCountry: 'IN',
+    },
+    areaServed: [
+      { '@type': 'Place', name: 'Dalhousie' },
+      { '@type': 'Place', name: 'Dharamshala' },
+      { '@type': 'Place', name: 'Manali' },
+      { '@type': 'Place', name: 'Shimla' },
+      { '@type': 'Place', name: 'Himachal Pradesh' },
+      { '@type': 'Place', name: 'North India' },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+function WebSiteJsonLd() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: DEFAULT_DESCRIPTION,
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: {
+        '@type': 'ImageObject',
+        url: LOGO_URL,
+      },
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -122,6 +184,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} font-sans min-h-screen flex flex-col`}>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <ThemeProvider>
           <Header />
           <main className="flex-1">{children}</main>
