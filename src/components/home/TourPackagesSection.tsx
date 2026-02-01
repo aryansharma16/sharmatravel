@@ -19,7 +19,7 @@ export function TourPackagesSection() {
             Tour Packages
           </h2>
           <Button
-            href="/tour-packages"
+            href="/contact"
             variant="primary"
             className="w-full shrink-0 bg-amber-500 text-white hover:bg-amber-600 xs:w-auto dark:bg-amber-500 dark:hover:bg-amber-600"
           >
