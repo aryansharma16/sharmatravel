@@ -71,13 +71,95 @@ export default function AboutPage() {
                 <strong className="text-slate-900 dark:text-white">
                   Pankaj Sharma
                 </strong>
-                . With local knowledge and a focus on customer satisfaction, we
-                aim to make your journey safe, comfortable, and on time.
+                , who is from Dalhousie. With local knowledge and a focus on
+                customer satisfaction, we aim to make your journey safe,
+                comfortable, and on time.
               </p>
             </CardContent>
           </Card>
         </section>
 
+        {/* Where We Operate — Dalhousie base, North India service */}
+        <section
+          className="mt-10"
+          aria-labelledby="location-heading"
+          id="location"
+        >
+          <h2
+            id="location-heading"
+            className="text-lg font-semibold text-slate-900 dark:text-white"
+          >
+            Where We Operate
+          </h2>
+          <p className="mt-3 text-slate-600 dark:text-slate-400">
+            We are based in <strong className="text-slate-900 dark:text-white">Dalhousie</strong> — our
+            main location and the place from where we operate. The owner is from
+            Dalhousie, so you get genuine local expertise. We can provide taxi
+            and tour services anywhere in North India, especially:
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-slate-600 dark:text-slate-400 sm:gap-x-6">
+            <li>Delhi</li>
+            <li>Himachal Pradesh (HP)</li>
+            <li>Jammu &amp; Kashmir (J&amp;K)</li>
+            <li>Uttarakhand (UK)</li>
+            <li>Punjab</li>
+            <li>Chandigarh</li>
+            <li>Haryana</li>
+          </ul>
+          <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+            Whether you need a cab from Delhi to Dalhousie, Manali to Dharamshala,
+            or anywhere in between, we&apos;re here to help.
+          </p>
+        </section>
+      </div>
+
+      {/* Dalhousie map — full width, like reference with location overlay */}
+      <section className="mt-4 w-full px-4 sm:px-6 lg:px-8" aria-label="Map: Dalhousie location">
+        <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
+          <div className="relative aspect-[16/9] w-full bg-slate-200 dark:bg-slate-700 min-h-[280px] sm:aspect-[2/1] sm:min-h-[360px]">
+              <iframe
+                title="Dalhousie, Himachal Pradesh — our base location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27261.5!2d75.9462!3d32.532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDalhousie%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+              />
+              {/* Location overlay — like reference (Jalandhar / Punjab box) */}
+              <div className="absolute left-4 top-4 z-10 rounded-lg border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md backdrop-blur dark:border-slate-600 dark:bg-slate-800/95">
+                <p className="text-base font-semibold text-slate-900 dark:text-white">Dalhousie</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Himachal Pradesh</p>
+                <div className="mt-3 flex flex-col gap-1.5 text-sm">
+                  <a
+                    href="https://www.google.com/maps/dir//Dalhousie,+Himachal+Pradesh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-medium text-primary-600 hover:underline dark:text-primary-400"
+                  >
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Directions
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/Dalhousie,+Himachal+Pradesh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-slate-700 hover:underline dark:text-slate-300"
+                  >
+                    View larger map
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12">
         {/* Hotels & Stays */}
         <section
           className="mt-10"
