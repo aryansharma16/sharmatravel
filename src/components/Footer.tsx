@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { YOUTUBE_URL, INSTAGRAM_URL } from '@/lib/social';
+import { LOGO_URL, SITE_NAME } from '@/lib/brand';
 
 const PHONE_PLACEHOLDER = '+91 9317670639 ';
 const PHONE_PLACEHOLDER2 = '+91 8278709365';
@@ -21,9 +23,19 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
-              Dalhousie Northern Cabs
-            </h3>
+            <Link href="/" className="inline-flex items-center gap-2">
+              <Image
+                src={LOGO_URL}
+                alt=""
+                width={80}
+                height={80}
+                className="h-16 w-16 shrink-0 rounded-lg object-contain sm:h-20 sm:w-20"
+                unoptimized
+              />
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                {SITE_NAME}
+              </h3>
+            </Link>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
               Taxi & tour services in Dalhousie, Himachal and North India. Owner: <strong>Pankaj Sharma</strong>.
             </p>

@@ -7,8 +7,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FixedContactBar } from '@/components/FixedContactBar';
-
-const SITE_NAME = 'Dalhousie Northern Cabs';
+import { SITE_NAME, LOGO_URL } from '@/lib/brand';
 const DEFAULT_DESCRIPTION =
   'Reliable taxi and tour services in Himachal and North India. Dalhousie taxi, Dharamshala cab, Manali tours. Book or enquire now.';
 
@@ -68,18 +67,29 @@ export const metadata: Metadata = {
     'Jammu to Dalhousie',
     'Shimla to Manali',
   ],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dalhousienortherncabs.com'),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: [
+      { url: LOGO_URL, sizes: 'any', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: LOGO_URL,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Taxi & Tour in Dalhousie & Himachal`,
     description: DEFAULT_DESCRIPTION,
+    images: [{ url: LOGO_URL, width: 512, height: 512, alt: SITE_NAME }],
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dalhousienortherncabs.com'),
-  robots: {
-    index: true,
-    follow: true,
-  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({

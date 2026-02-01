@@ -1,0 +1,12 @@
+{
+  "name": "Dalhousie Northern Cabs",
+  "short_name": "Dalhousie Northern Cabs",
+  "icons": [
+    { "src": "https://res.cloudinary.com/aryan2002cloud/image/upload/v1769947841/ChatGPT_Image_Feb_1_2026_05_40_14_PM_bygnam.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

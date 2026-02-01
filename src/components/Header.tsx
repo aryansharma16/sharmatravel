@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useTheme } from './ThemeProvider';
+import { LOGO_URL, SITE_NAME } from '@/lib/brand';
 
 const navLinks = [
   {
@@ -51,13 +53,21 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-900/95 dark:supports-[backdrop-filter]:bg-slate-900/80">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between px-4 py-3 sm:min-h-[80px] sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold text-slate-900 dark:text-white"
-          aria-label="Dalhousie Northern Cabs - Home"
+          className="flex items-center gap-2 text-slate-900 dark:text-white"
+          aria-label={`${SITE_NAME} - Home`}
         >
-          Dalhousie Northern Cabs
+          <Image
+            src={LOGO_URL}
+            alt=""
+            width={72}
+            height={72}
+            className="h-14 w-14 shrink-0 rounded-lg object-contain sm:h-16 sm:w-16 lg:h-[72px] lg:w-[72px]"
+            unoptimized
+          />
+          <span className="text-base font-semibold sm:text-lg">{SITE_NAME}</span>
         </Link>
 
         <nav className="hidden md:flex md:items-center md:gap-6">
